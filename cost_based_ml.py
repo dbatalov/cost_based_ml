@@ -34,7 +34,7 @@ def batch_prediction_data_bucket_key(output_uri_s3, batch_prediction_id):
 	datasource_filename = uri_components.path.split('/')[-1]
         uri_components = urlparse(output_uri_s3)
         bucket, key = uri_components.netloc, uri_components.path[1:]
-	key += "/batch-prediction/result/{}-{}.gz".format(batch_prediction_id, datasource_filename)
+	key += "batch-prediction/result/{}-{}.gz".format(batch_prediction_id, datasource_filename)
 	return bucket, key
 
 # read batch prediction results from S3 and turn them into an numpy array
